@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Text Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"], input[type="range"], input[type="color"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="range"] {
+            padding: 0;
+        }
+        
+        .value-display {
+            display: inline-block;
+            width: 40px;
+            text-align: right;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .output-text {
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 600px) {
+            .controls {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Custom Text Generator</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="textInput">Your Text:</label>
+                <input type="text" id="textInput" placeholder="Enter your text here..." value="Hello World!">
+            </div>
+            
+            <div class="control-group">
+                <label for="fontSize">Font Size: <span id="fontSizeValue" class="value-display">24</span>px</label>
+                <input type="range" id="fontSize" min="10" max="100" value="24">
+            </div>
+            
+            <div class="control-group">
+                <label for="fontColor">Font Color:</label>
+                <input type="color" id="fontColor" value="#000000">
+            </div>
+            
+            <div class="control-group">
+                <label for="bgColor">Background Color:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+        </div>
+        
+        <button id="createBtn">Create Text</button>
+        
+        <div class="result" id="result">
+            <div class="output-text" id="outputText">Hello World!</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get DOM elements
+            const textInput = document.getElementById('textInput');
+            const fontSize = document.getElementById('fontSize');
+            const fontColor = document.getElementById('fontColor');
+            const bgColor = document.getElementById('bgColor');
+            const createBtn = document.getElementById('createBtn');
+            const outputText = document.getElementById('outputText');
+            const resultDiv = document.getElementById('result');
+            const fontSizeValue = document.getElementById('fontSizeValue');
+            
+            // Update font size value display
+            fontSize.addEventListener('input', function() {
+                fontSizeValue.textContent = this.value;
+            });
+            
+            // Update text preview as user types
+            textInput.addEventListener('input', function() {
+                outputText.textContent = this.value || ' ';
+            });
+            
+            // Create button event
+            createBtn.addEventListener('click', function() {
+                // Get current values
+                const text = textInput.value || ' ';
+                const size = fontSize.value + 'px';
+                const color = fontColor.value;
+                const bg = bgColor.value;
+                
+                // Update the output text
+                outputText.textContent = text;
+                outputText.style.fontSize = size;
+                outputText.style.color = color;
+                resultDiv.style.backgroundColor = bg;
+                
+                // Add animation effect
+                outputText.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    outputText.style.transform = 'scale(1)';
+                }, 200);
+            });
+            
+            // Initialize with default values
+            createBtn.click();
+        });
+    </script>
+</body>
+</html>

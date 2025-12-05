@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อ - ครูเอก</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">ครูเอก</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">หน้าหลัก</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">ผลงาน</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">ติดต่อ</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact">
+        <div class="container">
+            <h1>ติดต่อฉัน</h1>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>ช่องทางการติดต่อ</h2>
+                    <div class="contact-content">
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/peakcup" target="_blank" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                                Facebook
+                            </a>
+                            <a href="https://line.me/ti/p/DLWkkEgElE" target="_blank" class="social-link">
+                                <i class="fab fa-line"></i>
+                                Line
+                            </a>
+                            <a href="mailto:iameak2u@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                                e-mail
+                            </a>
+                            <a href="tel:+66123456789" class="social-link">
+                                <i class="fas fa-phone"></i>
+                                Tel.
+                            </a>
+                            <div class="address-text">
+                                123 หมู่บ้านเจริญวัฒนา9 ถ.ทองไทวัฒนา ต.ในเมือง อ.เมือง จ.นครราชสีมา
+                            </div>
+                        </div>
+
+                        <div class="map-container">
+                            <h3>สถานที่ตั้ง</h3>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7962196.8724786155!2d96.19221068812328!3d12.98518719213865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d8df747424db1%3A0x9ed72c880757e802!2z4Lib4Lij4Liw4LmA4LiX4Lio4LmE4LiX4Lii!5e0!3m2!1sth!2sth!4v1764658399244!5m2!1sth!2sth" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Contact Button -->
+                <div class="floating-contact-btn" id="floatingContactBtn">
+                    <img src="images/chat_icon.png" alt="Contact" class="contact-icon">
+                </div>
+
+                <!-- Contact Form Modal -->
+                <div class="contact-modal" id="contactModal">
+                    <div class="contact-modal-content">
+                        <span class="close-btn" id="closeModal">&times;</span>
+                        <h2>ส่งข้อความ</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">ชื่อ-สกุล</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">อีเมล</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">ข้อความ</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ครูเอก. สงวนลิขสิทธิ์ทุกเนื้อหาในเว็บไซต์นี้</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
